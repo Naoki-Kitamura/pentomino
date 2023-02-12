@@ -43,7 +43,7 @@ void Game::update() {
 			else {
 				auto pos = mino[grubbed].getPos();
 				if (pos.x < 0 || pos.x > Scene::Size().x || pos.y < 0 || pos.y > Scene::Size().y) {
-					mino[grubbed].setPos(minoInitialPos[grubbed]);
+					mino[grubbed].setCenterPos(minoInitialPos[grubbed]);
 				}
 			}			
 

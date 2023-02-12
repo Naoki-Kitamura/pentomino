@@ -3,7 +3,7 @@
 #include "Board.hpp"
 #include "Mino.hpp"
 
-class Game : public SceneManager<String>::Scene
+class Game : public SceneManager<String, String>::Scene
 {
 	Array<Mino> mino;
 	Array<Point> minoInitialPos;

@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-class Title : public SceneManager<String>::Scene
+class Title : public SceneManager<String, String>::Scene
 {
 public:
 	Title(const InitData& init);

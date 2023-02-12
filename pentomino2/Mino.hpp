@@ -2,23 +2,23 @@
 
 class Mino {
 	int ID;
-	Vec2 pos;
-
-	Array<Vector2D<int>> shape;
+	Array<Array<Vector2D<int> > > shape;
 	Color color;
 
 	Polygon polygon;
+	Vec2 center2pos;
+	Vec2 center2corner;
+
 	int angle;
-	bool flipped;
 
 	bool fixed;
 
 public:
-	static const int MINO_SIZE = 20;
-	static const int MINO_NUM = 12;
-	static const int MINO_BLOCKS = 5;
+	static const int MINO_SIZE;
+	static const int MINO_NUM;
+	static const int MINO_CELLS;
 	
-	static const int FRAME_THICKNESS = 1;
+	static const int FRAME_THICKNESS;
 
 	static const Array<Vector2D<int> > MINO_SHAPE[];
 	static const Array<Vector2D<int> > MINO_VERTEX[];
@@ -29,16 +29,21 @@ public:
 
 	void rotate(int n);
 	void flip();
-	void setPos(Vec2 newPos);
 
 	int getID() const;
 	Vec2 getPos() const;
-	Array<Vector2D<int> > getRotatedShape() const;
+	Vec2 getCenterPos() const;
+	Vec2 getCornerPos() const;
+	Array<Vector2D<int> > getShape() const;
 	bool isFixed() const;
 
 	void fix();
 	void unfix();
 	void moveBy(Vec2 delta);
+	void setPos(Vec2 pos0);
+	void setCenterPos(Vec2 pos0);
+	void setCornerPos(Vec2 pos0);
+
 	void draw() const;
 	void drawFrame() const;
 	bool mouseOver() const;
